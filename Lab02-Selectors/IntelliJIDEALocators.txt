@@ -1,0 +1,20 @@
+
+1. //a[@aria-label='Ir a la página principal']
+
+2. //button[@class='_mainMenuItem__action_waloy _mainMenuItem__action_lvgl9 _mainMenuItem__action_puj4j _mainMenuItem__action_l8bdw _mainMenuItem__action_sqoqgh _mainMenuItem__action_gpg6ci _mainMenuItem__action_y9h3og _mainMenuItem__action_rk635 _mainMenuItem__action_89uwt _mainMenuItem__action_pc1o6'][normalize-space()='Para equipos']
+
+3. //a[@aria-label='Ir a la tienda']
+
+4. //a[@class='wt-col-inline menu-second__download-button wt-button wt-button_size_s wt-button_mode_primary']
+
+5. //*[name()='use' and contains(@href,'#collaboration')]
+
+6. //a[normalize-space()='IntelliJ Profiler']
+
+7. //div[@class='wt-offset-top-32 comparison-card__button']//button[@type='button'][normalize-space()='.exe']
+
+8. //a[@href='/es-es/idea/download/download-thanks.html?platform=windows&code=IIC']
+
+9. //a[normalize-space()='Comparar ediciones']
+
+10. //span[@class='wt-privacy-notice__tooltip-content']
