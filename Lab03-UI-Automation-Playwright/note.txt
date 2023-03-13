@@ -1,0 +1,20 @@
+1- install con npm
+npm init playwright@latest
+
+2- Run
+npx playwright test
+npx playwright test --headed
+npx playwright test file.spec.ts --headed
+
+3- reporte
+npx playwright show-reporte
+
+4- ejecutar conjunto de test
+npx playwright test demo2.spec.js demo3.spec.js --headed
+
+5- generar desde codegen
+npx playwright codegen https://demoqa.com/text-box
+
+6- actions https://playwright.dev/docs/input
+
+https://devexpress.github.io/testcafe/example/

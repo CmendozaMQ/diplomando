@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
-const sleep = (ms) => {
+const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-test('devexpress test', async ({ page }) => {
+test('Lab03', async ({ page }) => {
   await page.goto('https://devexpress.github.io/testcafe/example/');
   await page.getByTestId('name-input').click();
   await page.getByTestId('name-input').click();
