@@ -4,7 +4,7 @@ import { expect, test, Page } from '@playwright/test';
 const sleep = (ms: number) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
-const tie=5000;
+const tie=300;
 
 export class FJ {
 
@@ -38,5 +38,15 @@ export class FJ {
   async scroll(x: number,y: number,tiempo=tie){
     await this.page.mouse.wheel(x,y);
     await sleep(tiempo);
+  }
+
+  async texto(selector: string,val: string,tiempo=tie){
+    await this.page.locator(selector).fill(val);
+    await sleep(tiempo);
+  }
+
+  async click(selector: string, tiempo=tie){
+    await this.page.locator(selector).click()
+    await sleep(tiempo)
   }
 }
