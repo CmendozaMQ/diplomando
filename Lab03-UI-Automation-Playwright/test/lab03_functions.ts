@@ -4,7 +4,7 @@ import { expect, test, Page } from '@playwright/test';
 const sleep = (ms: number) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
-const tie=5000;
+const tie=500;
 
 export class lab03 {
 
@@ -35,10 +35,10 @@ export class lab03 {
     await sleep(time);
   }
 
-  // async scroll(x: number,y: number,tiempo=tie){
-  //   await this.page.mouse.wheel(x,y);
-  //   await sleep(tiempo);
-  // }
+  async scroll(x: number,y: number,tiempo=tie){
+    await this.page.mouse.wheel(x,y);
+    await sleep(tiempo);
+  }
 
   async TypeYourName(selector: string,val: string, time=tie){
     // await this.page.locator(selector).fill(val);
@@ -67,14 +67,24 @@ export class lab03 {
     await sleep(time);
   }
 
+  async ClickButton(selector: string, time=tie){
+    await this.page.locator(selector).click();
+    await sleep(time);
+  }
+
   async SelectOptionDropdown(selector: string, name: string, time=tie){
     await this.page.locator(selector).selectOption(name);
     await sleep(time);
   }
 
-  async veridy_text(selector: string, val: string, time=tie){
+  async verifyText(selector: string, val: string, time=tie){
     const  locator = this.page.locator(selector);
     await expect(locator).toContainText(val);
+    await sleep(time);
+  }
+
+  async mouseClick(y: number,x: number, time=tie){
+    await this.page.mouse.click(x, y);
     await sleep(time);
   }
 }

@@ -49,4 +49,20 @@ export class FJ {
     await this.page.locator(selector).click()
     await sleep(tiempo)
   }
+
+  async valor_campo(selector: string, tiempo=tie){
+    const value = await this.page.locator(selector).inputValue();
+    await sleep(tiempo);
+    return value
+  }
+
+  // async texto_try(selector: string, val: string, tiempo=tie){
+  //   try{
+  //     const locator = this.page.locator(selector);
+  //     await expect(locator).toBeVisible();
+  //     await expect(locator).toBeEnabled();
+  //     await this.page.locator(selector).fill(val)
+  //     await sleep(tiempo)
+  //   }
+  // }
 }
