@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { lab03 } from './lab03_functions';
 
-test('Demo POM', async({page})=>{
+test('Test Devexpress Lab3', async({page})=>{
     const f = new lab03(page);
     await f.openURL('https://devexpress.github.io/testcafe/example/');
     await f.TypeYourName("//input[@id='developer-name']","Cesar");
