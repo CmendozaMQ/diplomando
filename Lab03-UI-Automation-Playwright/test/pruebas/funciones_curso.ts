@@ -96,4 +96,30 @@ export class FJ {
     await expect.soft(this.page).toHaveURL(url);
     await sleep(tiempo);
   }
+
+  async combo_value(selector: string, val: string, tiempo=tie){
+    const cam = this.page.locator(selector);
+    await cam.selectOption(val);
+    await sleep(tiempo);
+  }
+
+  async combo_Label(selector: string, val:  string, tiempo=tie){
+    const cam = this.page.locator(selector);
+    await cam.selectOption({label: val});
+    await sleep(tiempo);
+  }
+
+  async combo_multiples(selector: string, arg: string[] , tiempo=tie){
+    const cam = this.page.locator(selector);
+    console.log(arg);
+    await cam.selectOption(arg);
+    await sleep(tiempo);
+  }
+
+  async terminar(tiempo=tie){
+    await this.page.close();
+    await sleep(tiempo);
+  }
+
+  
 }
