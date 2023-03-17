@@ -50,19 +50,50 @@ export class FJ {
     await sleep(tiempo)
   }
 
+  async validar_texto(selector: string,val: string, tiempo=tie){
+    const locator = this.page.locator(selector);
+    await expect(locator).toContainText(val);
+    await sleep(tiempo)
+  }
+
+  async texto_val(selector: string, val: string, tiempo=tie){
+    const locator = this.page.locator(selector);
+    await expect(locator).toBeVisible();
+    await expect(locator).toBeEnabled();
+    await expect(locator).toBeEmpty();
+    await this.page.locator(selector).fill(val);
+    await sleep(tiempo);
+  }
+
   async valor_campo(selector: string, tiempo=tie){
     const value = await this.page.locator(selector).inputValue();
     await sleep(tiempo);
     return value
   }
 
-  // async texto_try(selector: string, val: string, tiempo=tie){
-  //   try{
-  //     const locator = this.page.locator(selector);
-  //     await expect(locator).toBeVisible();
-  //     await expect(locator).toBeEnabled();
-  //     await this.page.locator(selector).fill(val)
-  //     await sleep(tiempo)
-  //   }
-  // }
+  async texto_try(selector: string, val: string, tiempo=tie){
+    try{
+      const locator = this.page.locator(selector);
+      await expect(locator).toBeVisible();
+      await expect(locator).toBeEnabled();
+      await this.page.locator(selector).fill(val)
+      await sleep(tiempo)
+    }catch(error){
+      console.log("campo con algun error");
+    }
+  }
+
+  async validar_url(url: string, tiempo=tie){
+    await expect(this.page).toHaveURL(url);
+  }
+
+  async validar_titulo(titulo: string, tiempo=tie){
+    await expect(this.page).toHaveTitle(titulo);
+    await sleep(tiempo);
+  }
+
+  async validar_url_lig(url: string, tiempo=tie){
+    await expect.soft(this.page).toHaveURL(url);
+    await sleep(tiempo);
+  }
 }
